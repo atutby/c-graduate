@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #------------------------------------------------------------------------------
 #
 # Source code for MIPT course on informatics
@@ -11,10 +10,9 @@
 # Script creating files in folder
 #
 #------------------------------------------------------------------------------
-
 mkdir -p $folder
 for i in $(seq 1 1 $border)
 do
-  echo "processing: $i"
-  echo $i > "myfolder/$i.in"
+  echo "processing: $i";
+  echo $i > "myfolder/$i.in";
 done
