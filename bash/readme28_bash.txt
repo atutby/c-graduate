@@ -124,7 +124,37 @@ env border=10 second.sh
 
 
 ============ 01:19:30 Тонкости написания скриптов ==========
+Another possible solution using unix text editor vi:
+open file in vi edit with vi filename.sh command;
+type in vi :set ff=unix command;
+save file with :wq
+It will save the file with unix line endings.
 
+border=10
+echo "a${border}b"
+a10b
+echo $(( 5 + $border ))
+15
+
+$ if [ "x$border" = "x" ]; then echo "Yes"; fi
+$ unset border
+$ if [ "x$border" = "x" ]; then echo "Yes"; fi # Yes
+
+
+
+=============== 01:31:20 Супероружие: grep =============
+cd ..
+grep rec *
+grep -r "fib" *
+
+cd llvm
+ls
+grep -riI dominator *
+grep -lriI dominator *
+
+
+
+============= 01:37:50 Супероружие: sed ================
 
 
 
