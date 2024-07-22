@@ -1,20 +1,42 @@
-#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/lambda/lambda.hpp>
 #include <iostream>
-using namespace boost::multiprecision;
-using namespace std;
+#include <iterator>
+#include <algorithm>
 
 int main()
 {
-  long long num1 = 1523844560192817464;
-  long long num2= 598274671729184766;
-  int128_t result = (int128_t) num1 * num2;
-  cout << "The product of the two integers is:" << "\n" << result << '\n';
-  return 0;
+    using namespace boost::lambda;
+    typedef std::istream_iterator<int> in;
+
+    std::for_each(
+        in(std::cin), in(), std::cout << (_1 * 3) << " \n" );
+
+    std::cin.get();
 }
 
 /*
+=== For Linux ===
+
 https://www.baeldung.com/linux/boost-install-on-ubuntu
 
 g++ main_boost_example.cpp -o a.out -I/opt/boost/include
+
+
+
+=== For Windows ====
+
+https://www.boost.org/doc/libs/1_85_0/more/getting_started/windows.html
+
+Нужно зайти в директорию куда бубуд генерироваться файлы exe obj
+cl /EHsc /I path\to\boost_1_82_0 path\to\example.cpp
+cl /EHsc /I C:\boost\boost_1_82_0\ C:\boost_example\main_boost_example.cpp
+cl /EHsc /I C:\boost\boost_1_82_0\ "C:\boost example\main_boost_example.cpp"
+cl /EHsc /I C:\boost\boost_1_82_0\ C:\PRO28_v2\TilirMFTI\C_practice\c-graduate\boost_example\main_boost_example.cpp
+
+mkdir build_windows && cd build_windows
+cl /EHsc /I C:\boost\boost_1_82_0\ ..\main_boost_example.cpp
+
+Cygwin
+https://fischerlaender.de/en/using-boost-c-libraries-with-gcc-g-under-windows
 
 */
