@@ -1,17 +1,18 @@
-#include <boost/lambda/lambda.hpp>
-#include <iostream>
-#include <iterator>
-#include <algorithm>
-
-int main()
-{
-    using namespace boost::lambda;
-    typedef std::istream_iterator<int> in;
-
-    std::for_each(
-        in(std::cin), in(), std::cout << (_1 * 3) << " \n" );
+#include <boost/array.hpp> 
+#include <iostream> 
+  
+using namespace std; 
+int main() 
+{ 
+    boost::array<int, 10> arr 
+        = { { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } }; 
+    for (int i = 0; i < 10; i++) { 
+        cout << "Geek Rank is :" << arr[i] << "*"
+             << "\n"; 
+    } 
 
     std::cin.get();
+    return 0; 
 }
 
 /*
@@ -33,8 +34,9 @@ cl /EHsc /I C:\boost\boost_1_82_0\ C:\boost_example\main_boost_example.cpp
 cl /EHsc /I C:\boost\boost_1_82_0\ "C:\boost example\main_boost_example.cpp"
 cl /EHsc /I C:\boost\boost_1_82_0\ C:\PRO28_v2\TilirMFTI\C_practice\c-graduate\boost_example\main_boost_example.cpp
 
-mkdir build_windows && cd build_windows
-cl /EHsc /I C:\boost\boost_1_82_0\ ..\main_boost_example.cpp
+mkdir build_windows && cd build_windows && \
+cl /EHsc /I C:\boost\boost_1_82_0\ ..\main_boost_example.cpp && \
+cd ..
 
 Cygwin
 https://fischerlaender.de/en/using-boost-c-libraries-with-gcc-g-under-windows
