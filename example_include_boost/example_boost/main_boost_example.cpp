@@ -21,7 +21,7 @@ int main()
 
 https://www.baeldung.com/linux/boost-install-on-ubuntu
 
-g++ main_boost_example.cpp -o a.out -I/opt/boost/include
+g++ main_example_boost.cpp -o a.out -I/opt/boost/include
 
 
 
@@ -31,12 +31,12 @@ https://www.boost.org/doc/libs/1_85_0/more/getting_started/windows.html
 
 Нужно зайти в директорию куда бубуд генерироваться файлы exe obj
 cl /EHsc /I path\to\boost_1_82_0 path\to\example.cpp
-cl /EHsc /I C:\boost\boost_1_82_0\ C:\boost_example\main_boost_example.cpp
-cl /EHsc /I C:\boost\boost_1_82_0\ "C:\boost example\main_boost_example.cpp"
-cl /EHsc /I C:\boost\boost_1_82_0\ C:\PRO28_v2\TilirMFTI\C_practice\c-graduate\boost_example\main_boost_example.cpp
+cl /EHsc /I C:\boost\boost_1_82_0\ C:\example_boost\main_example_boost.cpp
+cl /EHsc /I C:\boost\boost_1_82_0\ "C:\boost example\main_example_boost.cpp"
+cl /EHsc /I C:\boost\boost_1_82_0\ C:\PRO28_v2\TilirMFTI\C_practice\c-graduate\example_boost\main_example_boost.cpp
 
 mkdir build_windows && cd build_windows && \
-cl /EHsc /I C:\boost\boost_1_82_0\ ..\main_boost_example.cpp && \
+cl /EHsc /I C:\boost\boost_1_82_0\ ..\main_example_boost.cpp && \
 cd ..
 
 Cygwin
@@ -58,5 +58,12 @@ C:\raylib\w64devkit\bin\g++.exe -pedantic-errors -Wall -Wextra -fdiagnostics-col
 
 
 c:/PRO28_v2\VSCode1_settings_for_C-\VSCode1\buildw
+
+
+=== Fow Visual Studio ===
+https://www.boost.org/doc/libs/1_85_0/more/getting_started/windows.html
+In Configuration Properties > C/C++ > General > Additional Include Directories, enter the path to the Boost root directory, for example
+C:\Program Files\boost\boost_1_82_0
+In Configuration Properties > C/C++ > Precompiled Headers, change Use Precompiled Header (/Yu) to Not Using Precompiled Headers.
 
 */
